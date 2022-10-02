@@ -13,7 +13,9 @@ const getUserInfoController = new GetUserInfoController();
 router.post("/users", createUserController.handle);
 
 router.post("/login", loginUserController.handle);
-//router.get("/users/profile", authentication, getUserInfoController.handle);
 router.get("/users/:userId", getUserInfoController.handle);
+
+// rota com authentication
+router.get("/users/profile/:userId", authentication, getUserInfoController.handle);
 
 export default router;
